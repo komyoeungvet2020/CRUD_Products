@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Auth::routes();
-Route::resource('/home',ProductController::class);
 Route::get('{any}', function () {
     return view('app');
 })->where('any', '.*');
+
+Auth::routes();
+Route::resource('/home',ProductController::class);
+
